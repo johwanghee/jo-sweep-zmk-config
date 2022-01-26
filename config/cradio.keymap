@@ -112,14 +112,14 @@
 
            7_layer {
         // ----------------------------------------------------------------------------------------------------------------------------------
-        // |  trans  |  trans  |    :    |   ESC   |  trans  |  | HANGEUL |  HANJA  |  trans  |  trans  |   DEL   |
-        // |  trans  |    %    |    /    |  ENTER  |  trans  |  |  SL(2)  |  RGUI   |  trans  |  trans  |  trans  |
-        // |  trans  |  trans  |  trans  |    !    |  trans  |  |  SL(0)  |  trans  | RALT ,  | RCTRL . |  RESET  |
+        // |  trans  |  trans  |    :    |   ESC   |  trans  |  |  CAPS   |  HANJA  |  trans  |  trans  |   DEL   |
+        // |  trans  |    %    |    /    |  ENTER  |  trans  |  |  TO(2)  |  RGUI   |  trans  |  trans  |  trans  |
+        // |  trans  |  trans  |  trans  |    !    |  trans  |  |  TO(0)  |  trans  | RALT ,  | RCTRL . |  RESET  |
         //                               |  trans  |   TAB   |  |  none   |  trans  |
         bindings = <
-        &trans      &trans      &trans      &kp ESC     &trans         &kp LANG_HANGEUL  &kp LANG_HANJA  &trans         &trans         &kp DEL
-        &trans      &trans      &trans      &kp ENTER   &trans         &sl 2             &kp RGUI        &trans         &trans         &trans
-        &trans      &trans      &trans      &trans      &trans         &sl 0             &trans          &mt RALT CMMA  &mt RCTRL DOT  &reset
+        &trans      &trans      &trans      &kp ESC     &trans         &kp CAPS          &kp LANG_HANJA  &trans         &trans         &kp DEL
+        &trans      &trans      &trans      &kp ENTER   &trans         &to 2             &kp RGUI        &trans         &trans         &trans
+        &trans      &trans      &trans      &trans      &trans         &to 0             &trans          &mt RALT CMMA  &mt RCTRL DOT  &reset
                                             &trans      &kp TAB        &none             &trans
         >;
         };
