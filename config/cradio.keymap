@@ -7,7 +7,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
 
 &mt {
     tapping-term-ms = <400>;
@@ -33,15 +32,15 @@
 
            1_layer {
         // ----------------------------------------------------------------------------------------------------------------------------------
-        // |  trans  |  trans  |  trans  |  trans  |  trans  |  |  BT_CLR |  BT_NXT |  BT_PRV |  trans  |  usb/bt |
+        // |  trans  |  trans  |  trans  |  usb/bt |  BT_CLR |  |  BT_0   |  BT_1   |  BT_2   |  BT_3   |  BT_4   |
         // |  trans  |  trans  |  none   |  trans  |  trans  |  |  trans  |  trans  |  trans  |  trans  |  trans  |
         // |  trans  |  trans  |  trans  |  trans  |  trans  |  |  trans  |  trans  |  trans  |  trans  |  trans  |
         //                               |  trans  |  trans  |  |  trans  |  trans  |
         bindings = <
-        &trans      &trans      &trans      &trans      &trans         &bt BT_CLR    &bt BT_NXT    &bt BT_PRV    &trans        &out OUT_TOG
-        &trans      &trans      &none       &trans      &trans         &trans        &trans        &trans        &trans        &trans
-        &trans      &trans      &trans      &trans      &trans         &trans        &trans        &trans        &trans        &trans
-                                            &trans      &trans         &trans        &trans
+        &trans      &trans      &trans      &out OUT_TOG  &bt BT_CLR     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+        &trans      &trans      &none       &trans        &trans         &trans        &trans        &trans        &trans        &trans
+        &trans      &trans      &trans      &trans        &trans         &trans        &trans        &trans        &trans        &trans
+                                            &trans        &trans         &trans        &trans
         >;
         };
 
@@ -89,13 +88,13 @@
 
            5_layer {
         // ----------------------------------------------------------------------------------------------------------------------------------
-        // |  trans  |  trans  |  trans       |  trans  |  trans  |  |  trans  |   F7    |   F8    |   F9    |   F10   |
-        // |  trans  |  none   |  LCTRL LALT  |  trans  |  trans  |  |  trans  |   F4    |   F5    |   F6    |   F11   |
-        // |  trans  |  trans  |  trans       |  trans  |  trans  |  |  trans  |   F1    |   F2    |   F3    |   F12   |
-        //                                    |  trans  |  trans  |  |  trans  |  trans  |
+        // |  trans  |  trans  |  trans  |  trans  |  trans  |  |  trans  |   F7    |   F8    |   F9    |   F10   |
+        // |  trans  |  none   |  LCTRL  |  LALT   |  trans  |  |  trans  |   F4    |   F5    |   F6    |   F11   |
+        // |  trans  |  trans  |  trans  |  trans  |  trans  |  |  trans  |   F1    |   F2    |   F3    |   F12   |
+        //                               |  trans  |  trans  |  |  trans  |  trans  |
         bindings = <
         &trans      &trans      &trans          &trans      &trans         &trans      &kp F7      &kp F8      &kp F9      &kp F10
-        &trans      &none       &mt LCTRL LALT  &trans      &trans         &trans      &kp F4      &kp F5      &kp F6      &kp F11
+        &trans      &none       &kp LCTRL       &kp LALT    &trans         &trans      &kp F4      &kp F5      &kp F6      &kp F11
         &trans      &trans      &trans          &trans      &trans         &trans      &kp F1      &kp F2      &kp F3      &kp F12
                                                 &trans      &trans         &trans      &trans
         >;
