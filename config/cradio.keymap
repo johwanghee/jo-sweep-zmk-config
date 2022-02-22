@@ -19,29 +19,29 @@
                 
            default_layer {
         // ----------------------------------------------------------------------------------------------------------------------------------
-        // |    Q    |    W    |    E    |    R    |    T           |  |    Y        |    U    |    I    |    O    |    P     |
-        // | LSFT A  | MO(5) S | MO(1) D | MO(3) F |    G           |  |    H        | MO(4) J | MO(2) K | MO(6) L |  LSHFT ; |
-        // |    Z    | LCTRL X | LALT C  |    V    |    B           |  |    N        |    M    | LALT ,  | LCTRL . |  MO(8) / |
-        //                               |  SPACE  | LGUI BACKSPACE |  | MO(7) SPACE |  MO(2)  |
+        // | MO(8) Q |    W    |    E    |    R    |    T      |  |    Y        |    U    |    I    |    O    |    P     |
+        // | LSFT A  | MO(5) S | MO(1) D | MO(3) F |    G      |  |    H        | MO(4) J | MO(2) K | MO(6) L |  LSHFT ; |
+        // |    Z    | LCTRL X | LALT C  |    V    |    B      |  |    N        |    M    | LALT ,  | LCTRL . |  MO(8) / |
+        //                               |  SPACE  | LGUI BSPC |  | MO(7) SPACE |  BSPC   |
         bindings = <
-        &kp Q       &kp W        &kp E       &kp R      &kp T          &kp Y        &kp U     &kp I          &kp O          &kp P 
+        &lt 8 Q     &kp W        &kp E       &kp R      &kp T          &kp Y        &kp U     &kp I          &kp O          &kp P 
         &mt LSFT A  &lt 5 S      &lt 1 D     &lt 3 F    &kp G          &kp H        &lt 4 J   &lt 2 K        &lt 6 L        &mt LSHFT SEMI
         &kp Z       &mt LCTRL X  &mt LALT C  &kp V      &kp B          &kp N        &kp M     &mt LALT CMMA  &mt LCTRL DOT  &lt 8 SLASH
-                                             &kp SPACE  &mt LGUI BSPC  &lt 7 SPACE  &kp BSPC 
+                                             &kp SPACE  &mt LGUI BSPC  &lt 7 SPACE  &kp BSPC
         >;
         };
 
            1_layer {
         // ----------------------------------------------------------------------------------------------------------------------------------
-        // |  trans  |  trans  |  trans  |  usb/bt |  BT_CLR |  |  BT_0   |  BT_1   |  BT_2   |  BT_3   |  BT_4   |
-        // |  trans  |  trans  |  none   |  trans  |  trans  |  |  trans  |  trans  |  trans  |  trans  |  trans  |
         // |  trans  |  trans  |  trans  |  trans  |  trans  |  |  trans  |  trans  |  trans  |  trans  |  trans  |
-        //                               |  trans  |  trans  |  |  trans  |  trans  |
+        // |  trans  |  trans  |  none   |   UP    |  trans  |  |  trans  |  trans  |  trans  |  trans  |  trans  |
+        // |  trans  |  trans  |  trans  |  DOWN   |  trans  |  |  trans  |  trans  |  trans  |  trans  |  trans  |
+        //                               |  trans  |   TAB   |  |  trans  |  trans  |
         bindings = <
-        &trans      &trans      &trans      &out OUT_TOG  &bt BT_CLR     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-        &trans      &trans      &none       &trans        &trans         &trans        &trans        &trans        &trans        &trans
-        &trans      &trans      &trans      &trans        &trans         &trans        &trans        &trans        &trans        &trans
-                                            &trans        &trans         &trans        &trans
+        &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+        &trans      &trans      &none       &kp UP      &trans      &trans      &trans      &trans      &trans      &trans
+        &trans      &trans      &trans      &kp DOWN    &trans      &trans      &trans      &trans      &trans      &trans
+                                            &trans      &kp TAB     &trans      &trans
         >;
         };
 
@@ -83,7 +83,7 @@
         &trans      &kp COLON   &kp LT      &kp GT      &kp SEMI       &trans      &trans      &trans      &trans      &trans
         &kp LBRC    &kp RBRC    &kp LPAR    &kp RPAR    &kp AT         &trans      &none       &kp EQUAL   &kp PLUS    &kp PRCNT
         &trans      &kp EXCL    &kp LBKT    &kp RBKT    &trans         &trans      &trans      &trans      &trans      &trans
-                                      &kp K_VOL_UP      &trans         &trans      &kp K_VOL_DN
+                                            &trans      &trans         &trans      &trans
         >;
         };
 
@@ -129,6 +129,20 @@
         >;
         };
 
+           8_layer {
+        // ----------------------------------------------------------------------------------------------------------------------------------
+        // |  trans  |  trans  |  trans  |   ESC   |  trans  |  |  trans  |  trans  |  trans  |  trans  |  usb/bt |
+        // |  trans  |  trans  |  trans  |  ENTER  |  trans  |  |  trans  |  trans  |  trans  |  trans  |  BT_CLR |
+        // |  trans  |  trans  |  trans  |  trans  |  trans  |  |  trans  |  trans  |  trans  |  BT_PRV |  BT_NXT |
+        //                               |  trans  |   TAB   |  |  trans  |  trans  |
+        bindings = <
+        &none       &trans      &trans      &kp ESC     &trans         &trans      &trans      &trans      &trans      &out OUT_TOG
+        &trans      &trans      &trans      &kp ENTER   &trans         &trans      &trans      &trans      &trans      &bt BT_CLR
+        &trans      &trans      &trans      &trans      &trans         &trans      &trans      &trans      &bt BT_PRV  &bt BT_NXT
+                                            &trans      &kp TAB        &trans      &trans
+        >;
+        };
+        
         //    99_layer {
         // // ----------------------------------------------------------------------------------------------------------------------------------
         // // |  trans  |  trans  |  trans  |  trans  |  trans  |  |  trans  |  trans  |  trans  |  trans  |  trans  |
