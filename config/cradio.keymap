@@ -47,14 +47,14 @@
 
            2_layer {
         // ----------------------------------------------------------------------------------------------------------------------------------
-        // |  trans  |  trans  |  PG_UP  |  trans  |  trans  |  |  trans  |  trans  |  trans  |  trans       |  trans       |
-        // |  LEFT   |    UP   |  DOWN   |  RIGHT  |  trans  |  |  trans  |  RGUI   |  none   |  LCTRL LALT  |  LC(A) LSFT  |
-        // |  trans  |  HOME   |  PG_DN  |   END   |  trans  |  |  trans  |  trans  |  trans  |  trans       |  trans       |
+        // |  trans  |  trans  |   UP    |  trans  |  PG_UP  |  |  HOME   |  trans  |  trans  |  trans       |  trans       |
+        // |  trans  |  LEFT   |  DOWN   |  RIGHT  |  PG_DN  |  |   END   |  LGUI   |  none   |  LCTRL LALT  |  LC(A) LSFT  |
+        // |  trans  |  trans  |  trans  |  trans  |  trans  |  |  trans  |  trans  |  trans  |  trans       |  trans       |
         //                               |  trans  |  trans  |  |  trans  |  trans  |
         bindings = <
-        &trans      &trans      &kp PG_UP   &trans      &trans         &trans      &trans      &trans      &trans          &trans
-        &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &trans         &trans      &trans      &none       &mt LCTRL LALT  &mt LC(A) LSFT
-        &trans      &trans      &kp PG_DN   &trans      &trans         &trans      &trans      &trans      &trans          &trans
+        &trans      &trans      &kp UP      &trans      &kp PG_UP      &kp HOME    &trans      &trans      &trans          &trans
+        &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp PG_DN      &kp END     &kp LGUI    &none       &mt LCTRL LALT  &mt LC(A) LSFT
+        &trans      &trans      &trans      &trans      &trans         &trans      &trans      &trans      &trans          &trans
                                             &trans      &trans         &trans      &trans
         >;
         };
