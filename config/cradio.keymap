@@ -39,9 +39,9 @@
         //                               |  trans  |   TAB   |  |  trans  |  trans  |
         bindings = <
         &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
-        &trans      &trans      &none       &kp UP      &trans      &trans      &trans      &trans      &trans      &trans
-        &trans      &trans      &trans      &kp DOWN    &trans      &trans      &trans      &trans      &trans      &trans
-                                            &trans      &kp TAB     &trans      &trans
+        &trans      &kp F20     &none       &kp F21     &kp F22     &trans      &trans      &trans      &trans      &trans
+        &trans      &trans      &trans      &trans      &kp F23     &trans      &trans      &trans      &trans      &trans
+                                            &trans      &trans      &trans      &trans
         >;
         };
 
@@ -131,7 +131,7 @@
 
            8_layer {
         // ----------------------------------------------------------------------------------------------------------------------------------
-        // |  trans  |  trans  |  trans  |   ESC   |  trans  |  |  trans  |  trans  |  trans  |  trans  |  usb/bt |
+        // |  none   |  trans  |  trans  |   ESC   |  trans  |  |  trans  |  trans  |  trans  |  trans  |  usb/bt |
         // |  trans  |  trans  |  trans  |  ENTER  |  trans  |  |  trans  |  trans  |  trans  |  trans  |  BT_CLR |
         // |  trans  |  trans  |  trans  |  trans  |  trans  |  |  trans  |  trans  |  trans  |  BT_PRV |  BT_NXT |
         //                               |  trans  |   TAB   |  |  trans  |  trans  |
