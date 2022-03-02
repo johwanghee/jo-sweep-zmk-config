@@ -34,14 +34,14 @@
            1_layer {
         // ----------------------------------------------------------------------------------------------------------------------------------
         // |  trans  |  trans  |  trans  |  trans  |  trans  |  |  trans  |  trans  |  trans  |  trans  |  trans  |
-        // |  trans  |   F14   |  none   |   F15   |   F16   |  |  trans  |  trans  |  trans  |  trans  |  trans  |
-        // |  trans  |  trans  |  trans  |  DOWN   |   F17   |  |  trans  |  trans  |  trans  |  trans  |  trans  |
-        //                               |  trans  |  trans  |  |  trans  |  trans  |
+        // |  trans  |   F14   |  none   |   F15   |  PG_UP  |  |  trans  |  trans  |  trans  |  trans  |  trans  |
+        // |  trans  |  trans  |  trans  |  DOWN   |  PG_DN  |  |  trans  |  trans  |  trans  |  trans  |  trans  |
+        //                               |  trans  |   TAB   |  |  trans  |  trans  |
         bindings = <
         &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
-        &trans      &kp F14     &none       &kp F15     &kp F16     &trans      &trans      &trans      &trans      &trans
-        &trans      &trans      &trans      &trans      &kp F17     &trans      &trans      &trans      &trans      &trans
-                                            &trans      &trans      &trans      &trans
+        &trans      &kp F14     &none       &kp F15     &kp PG_UP   &trans      &trans      &trans      &trans      &trans
+        &trans      &trans      &trans      &trans      &kp PG_DN   &trans      &trans      &trans      &trans      &trans
+                                            &trans      &kp TAB     &trans      &trans
         >;
         };
 
