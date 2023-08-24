@@ -119,12 +119,12 @@
         // ----------------------------------------------------------------------------------------------------------------------------------
         // |    Q    |    W    |    :    |    ESC    |    none     |  |  CAPS   |  HANJA  | HANGEUL |  none   |   DEL   |
         // |  none   |  none   |    /    |   ENTER   | SHIFT+ENTER |  |  none   |  none   |  none   |  none   |  none   |
-        // |  none   |  none   |  none   |     !     |    none     |  |  TO(0)  |  TO(2)  |  TO(9)  |  none   |  RESET  |
+        // |  none   |  none   |  none   |     !     |    none     |  |  TO(0)  |  TO(2)  |  TO(9)  |  none   |  none   |
         //                               | SHIFT+TAB |     TAB     |  |  none   |  trans  |
         bindings = <
         &kp Q       &kp W       &kp COLON  &kp ESC     &none          &kp CAPS     &kp LANG2    &kp LANG1    &none    &kp DEL
         &none       &none       &kp FSLH   &kp ENTER   &kp LS(ENTER)  &none        &none        &none        &none    &none
-        &none       &none       &none      &kp EXCL    &none          &to 0        &to 2        &to 9        &none    &reset
+        &none       &none       &none      &kp EXCL    &none          &to 0        &to 2        &to 9        &none    &none
                                            &kp LS(TAB) &kp TAB        &none        &trans
         >;
         };
