@@ -21,12 +21,12 @@
         // ----------------------------------------------------------------------------------------------------------------------------------
         // | MO(8) Q |    W    |    E    |    R    |    T      |  |    Y        |    U    |    I    |    O    |    P     |
         // | LSFT A  | MO(5) S | MO(1) D | MO(3) F |    G      |  |    H        | MO(4) J | MO(2) K | MO(6) L |  LSHFT ; |
-        // |    Z    | LCTRL X | LALT C  |    V    |    B      |  |    N        |    M    | LALT ,  | LCTRL . |  MO(8) / |
+        // |    Z    | LCTRL X | LALT C  |    V    |    B      |  |    N        |    M    | LALT ,  | LCTRL . |  MO(9) / |
         //                               |  SPACE  | LGUI BSPC |  | MO(7) SPACE |  BSPC   |
         bindings = <
         &lt 8 Q     &kp W        &kp E       &kp R      &kp T          &kp Y        &kp U     &kp I          &kp O          &kp P 
         &mt LSFT A  &lt 5 S      &lt 1 D     &lt 3 F    &kp G          &kp H        &lt 4 J   &lt 2 K        &lt 6 L        &mt LSHFT SEMI
-        &kp Z       &mt LCTRL X  &mt LALT C  &kp V      &kp B          &kp N        &kp M     &mt LALT CMMA  &mt LCTRL DOT  &lt 8 SLASH
+        &kp Z       &mt LCTRL X  &mt LALT C  &kp V      &kp B          &kp N        &kp M     &mt LALT CMMA  &mt LCTRL DOT  &lt 9 SLASH
                                              &kp SPACE  &mt LGUI BSPC  &lt 7 SPACE  &kp BSPC
         >;
         };
@@ -117,18 +117,18 @@
 
            7_layer {
         // ----------------------------------------------------------------------------------------------------------------------------------
-        // |  trans  |  trans  |    :    |   ESC   |  trans  |  |  CAPS   |  HANJA  |  trans  |  trans  |   DEL   |
-        // |  trans  |    %    |    /    |  ENTER  |  trans  |  |  TO(2)  |  RGUI   |  trans  |  trans  |  trans  |
-        // |  trans  |  trans  |  trans  |    !    |  trans  |  |  TO(0)  |  trans  | RALT ,  | RCTRL . |  RESET  |
-        //                               |  trans  |   TAB   |  |  none   |  trans  |
+        // |    Q      |    W    |    :    |    ESC    |    none     |  |  CAPS   |  HANJA  | HANGEUL |  none   |   DEL   |
+        // | caps_word |  none   |    /    |   ENTER   | SHIFT+ENTER |  |  none   |  none   |  none   |  none   |  none   |
+        // |  none     |  none   |  none   |     !     |    none     |  |  TO(0)  |  TO(2)  |  TO(8)  |  none   |  RESET  |
+        //                                 | SHIFT+TAB |     TAB     |  |  none   |  none   |
         bindings = <
-        &trans      &trans      &trans      &kp ESC     &trans         &kp CAPS          &kp LANG_HANJA  &trans         &trans         &kp DEL
-        &trans      &trans      &trans      &kp ENTER   &trans         &to 2             &kp RGUI        &trans         &trans         &trans
-        &trans      &trans      &trans      &kp EXCL    &trans         &to 0             &trans          &mt RALT CMMA  &mt RCTRL DOT  &reset
-                                            &trans      &kp TAB        &none             &trans
+        &kp Q       &kp W       &kp COLON  &kp ESC     &none          &kp CAPS     &kp LANG2    &kp LANG1    &none    &kp DEL
+        &caps_word  &none       &&kp FSLH  &kp ENTER   &kp LS(ENTER)  &none        &none        &none        &none    &none
+        &none       &none       &none      &kp EXCL    &none          &to 0        &to 2        &to 8        &none    &reset
+                                           &kp LS(TAB) &kp TAB        &none        &none
         >;
         };
-        
+      
            8_layer {
         // ----------------------------------------------------------------------------------------------------------------------------------
         // |  none   |  trans  |  OUT_USB  |  OUT_BLE  |    !    |  |  trans  |  trans  |  trans  |  trans  |  trans  |
@@ -140,6 +140,20 @@
         &trans      &trans      &trans        &trans        &trans         &trans      &trans      &trans      &trans      &trans
         &trans      &bt BT_PRV  &bt BT_NXT    &trans        &trans         &trans      &trans      &trans      &trans      &trans
                                               &out OUT_TOG  &bt BT_CLR     &trans      &trans
+        >;
+        };
+        
+           9_layer {
+        // ----------------------------------------------------------------------------------------------------------------------------------
+        // |   ESC   |    Q    |    W    |    R    |    T    |  |  none   |  none   |  none   |  none   |  none   |
+        // |  LSFT   |    A    |    S    |    D    |    F    |  |  none   |  none   |  none   |  none   |  none   |
+        // |    Z    |  none   |  none   |  none   |    G    |  |  none   |  none   |  none   |  none   |  none   |
+        //                               |  trans  |  trans  |  |  trans  |  trans  |
+        bindings = <
+        &kp ESC    &kp Q      &kp W      &kp R      &kp T         &trans     &trans     &trans     &trans     &trans
+        &kp LSFT   &kp A      &kp S      &kp D      &kp F         &trans     &trans     &trans     &trans     &trans
+        &kp Z      &none      &none      &none      &kp G         &trans     &trans     &trans     &trans     &none
+                                         &trans     &trans        &trans     &trans
         >;
         };
         
