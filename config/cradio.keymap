@@ -139,7 +139,7 @@
         &none       &trans      &out OUT_USB  &out OUT_BLE  &kp EXCL       &trans      &trans      &trans      &trans      &trans
         &trans      &trans      &trans        &trans        &trans         &trans      &trans      &trans      &trans      &trans
         &trans      &bt BT_PRV  &bt BT_NXT    &trans        &trans         &trans      &trans      &trans      &trans      &trans
-                                              &out OUT_TOG  &bt BT_CLR     &trans      &trans
+                                              &kp ENTER     &bt BT_CLR     &trans      &trans
         >;
         };
         
